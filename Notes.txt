@@ -1,0 +1,21 @@
+﻿State Management
+----------------
+
+web apps use http protocol for communication between the pages throughout the 
+website/webapp.
+ And http is a stateless protocol, so if we want to transfer data from one page to 
+ another, or want to persist data in a session then we require 
+ STATE MGT TECHNIQUES.
+ 1) Client Side
+ 2) Server Side
+
+ Client Side----- not secure/tampered/limit on the size
+ Easy to use, can be encrypted and made safe, but yes is limitation
+ 1) cookies
+ 2) Querystring
+ 3) Hidden Fields
+ 4) ViewState
+
+ Server Side----- secure/cannot be tampered/doesnot have limit on the size
+ 1) Session
+ 2) Application
