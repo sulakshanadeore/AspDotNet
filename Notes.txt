@@ -52,6 +52,21 @@ WebGarden
 3) custom database----
 *************************************
  <sessionState mode="SQLServer" sqlConnectionString="server=SPD\SQLEXPRESS;Integrated Security=true;database=MphasisNorthwind" cookieless="true" allowCustomSqlDatabase="true"></sessionState>
+-----------------------------------------------------------------------------------------------------------------------------------------
+HttpContext:
+HttpContext object holds info about the current http request,
+When we make httprequest or response then httpContext is created. 
+
+Every time it is created  for every request and response it creates server current state of http request and response.
+HttpContext can hold 
+1) Request
+2) Response
+3) Cahce
+4) Session
+5) Server
+6) User Info likt Authorization and Authentication
+
+
 
 
 
