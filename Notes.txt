@@ -1,0 +1,53 @@
+﻿Server Side State Mgt
+----------------------
+Constraints of Client Side State Mgt/Problems/Hindrance
+
+1. Size of data---- 
+   Cookies-----4 mb----data carrying to another  page--- data available 
+
+   queryString---256 chars-----data carrying to another page----- data ---url
+   Hidden Fields---- can be seen in the browser, if we open the page in ViewSource, Same page
+   ViewState------ single page postback data---- using View State data cannot be taken from one page to another.	
+
+So we need server side state mgt ,where everything will be handled by the server
+*****so limit on the data size and security also available****
+Problem----network traffic will increase.
+
+1) Session
+2) Application
+
+Session use cookies to store data
+Session are accessible across the site on every page , just by using the key of the 
+session.
+By default the mode of the session  is In-Proc, means the session is created on 
+the same thread where application is created.
+cookieless="true"------- no cookies
+cookieless="false"---- create cookies
+1) In-Proc
+2) StateServer---- Out-of-Proc---state connection string
+default port 42424
+0 - 65535--- range of ports
+stateconnectionString="tcpip=localhost:42424"
+stateconnectionString="tcpip=127.0.0.1:42424"
+*****************************
+Readings
+=---------=
+WebFarm
+WebGarden
+****************
+3) SQL SERVER
+
+1) Temporary---- If SQL SERVER if restarted all the data is washed off
+2) Persisted----If SQL SERVER if restarted all the data is persisted and not washed off
+3) custom database----
+
+
+
+Help
+aspnet_regsql -?
+1) Temperary
+aspnet_regsql -S SPD\SQLEXPRESS -E -ssadd -sstype t
+
+
+
+
