@@ -13,6 +13,13 @@ So we need server side state mgt ,where everything will be handled by the server
 *****so limit on the data size and security also available****
 Problem----network traffic will increase.
 
+***********Help
+aspnet_regsql -?
+1) Temperary
+aspnet_regsql -S SPD\SQLEXPRESS -E -ssadd -sstype t**********************
+
+
+
 1) Session
 2) Application
 
@@ -37,16 +44,16 @@ WebGarden
 ****************
 3) SQL SERVER
 
+
+
+
 1) Temporary---- If SQL SERVER if restarted all the data is washed off
 2) Persisted----If SQL SERVER if restarted all the data is persisted and not washed off
 3) custom database----
+*************************************
+ <sessionState mode="SQLServer" sqlConnectionString="server=SPD\SQLEXPRESS;Integrated Security=true;database=MphasisNorthwind" cookieless="true" allowCustomSqlDatabase="true"></sessionState>
 
 
-
-Help
-aspnet_regsql -?
-1) Temperary
-aspnet_regsql -S SPD\SQLEXPRESS -E -ssadd -sstype t
 
 
 
