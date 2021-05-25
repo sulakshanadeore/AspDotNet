@@ -1,0 +1,99 @@
+﻿
+Caching
+------
+
+Cache memory
+its a temperary memory.
+hold data temperarily
+small amount of data
+overwriting the old data
+
+Caching is a technique for storing frequently used data/info in the memory. 
+easy accessibility whenever required.
+
+------------------------------------------------------------------------
+ASP.NET runtime------- includes key-value map(pair) of CLR objects called as cache.
+Cache available HttpContext and it will be available to page------ 
+(System.Web.UI.Page)
+
+State Managemnet -----deterministic
+Caching----------------non -deterministic
+Caching data not available in following cases
+1) If lifetime expires
+2) if application releases the memory
+3) If caching doesn't take place for any reason
+
+You can access the items in the caching using indexer, & also control the lifetime of the objects
+in the cache and set up links between physical storage  location & cached objects
+
+-------------------------------------------------------------------------
+
+
+
+
+old data/updated data/ frequently updated----- frequency of updation
+
+The application can generate any number of times--- but at a performance cost.
+
+1) Performance---- caching
+
+
+1)Duration-----------------------------------------120 seconds
+Frequency---- 2mins----- caching period
+Caching is specified in seconds. 1 min--60 secs
+
+2) Variation------------------------------------------
+a) VaryByParameter(VaryByParam)-None/1/many params-------numberOfSeatsbooked
+b) VaryByControl-----
+
+3) Storage------------------------------------------
+Client
+Server
+Proxy Server
+----------------------------------------------------------------------------------------
+Types of Caching
+1) Output Caching
+
+2) Data Caching
+3) Object Caching
+4) Class Caching
+5) Configuration Caching
+------------------------------------------------------------
+1) Output Caching
+storing the copy of the final output of the page which rendered to the client(browser).
+this storing is caching.
+
+  Rendering Cached page to the user if the user wants to access 
+  the same page again.
+Output caching allows  bypassing the round trips to the server by caching the data in the memory.
+
+OutputCache Directive----- output caching 
+----------------------
+Location----
+Any--- page may be cached anywhere
+None---- disable caching
+Client ---cached content on the client(browser)
+DownStream----cached content stored on the server and downstream(proxy) 
+server----- cached only on server
+Server And Client---- server and client both
+
+-------------------------------------------------------------------
+Data Caching
+-----------
+caching data source controls.
+CacheDuration--- duration in seconds
+CacheExpirationPolicy---- when the data in the cache will expire
+Enable Caching----true/false--- whether to cache or not
+CacheKeyDependency------key for the controls that will auto-expire the content of the cache when removed
+----------------------------------------------------------
+Object Caching
+---------------
+More control/flexible over other techniques.
+U can place any object in the cache.
+Cache["mydata"]=ds.Tables["emp"];
+Cache.Add("mydata",ds.Tables["emp"]);
+Cache.Insert("mydata",ds.Table["emp"]);
+
+
+
+
