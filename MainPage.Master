@@ -86,6 +86,10 @@
                     <td colspan="4" style="background-color:bisque" class="auto-style6">
                          <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server" >
+                            <asp:AdRotator ID="AdRotator1" runat="server"  AdvertisementFile="~/Advertisements.xml" />
+                        </asp:ContentPlaceHolder>
+
                     </td>
                 </tr>
                 <tr>

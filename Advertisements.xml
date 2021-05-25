@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+  <Ad>
+    <ImageUrl>Assets\addMoney.jpg</ImageUrl>
+    <AlternateText>AddMoneyToWallet</AlternateText>
+    <Impressions>10000</Impressions>
+    <Height>200px</Height>
+    <Width>100px</Width>
+    <NavigateUrl>https://www.paytm.com</NavigateUrl>
+    <Keyword>AddMoney</Keyword>
+  </Ad>
+    <Ad>
+    <ImageUrl>Assets\logo.png</ImageUrl>
+    <AlternateText>AddMoneyToWallet</AlternateText>
+    <Impressions>20000</Impressions>
+    <Height>200px</Height>
+    <Width>100px</Width>
+    <NavigateUrl>https://www.hdfcbank.com</NavigateUrl>
+    <Keyword>AddMoney</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>Assets\recharges.jpg</ImageUrl>
+    <AlternateText>AddMoneyToWallet</AlternateText>
+    <Impressions>50000</Impressions>
+    <Height>200px</Height>
+    <Width>100px</Width>
+    <NavigateUrl>https://www.paytm.com</NavigateUrl>
+    <Keyword>AddMoney</Keyword>
+  </Ad>
+</Advertisements>
