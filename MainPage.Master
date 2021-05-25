@@ -1,0 +1,108 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainPage.master.cs" Inherits="MasterPagesDemo.MainPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Paytm</title>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            border-left-style: solid;
+            border-left-width: 1px;
+            border-right: 1px solid #C0C0C0;
+            border-top-style: solid;
+            border-top-width: 1px;
+            border-bottom: 1px solid #C0C0C0;
+        }
+        .auto-style2 {
+            height: 23px;
+        }
+        .auto-style3 {
+            height: 23px;
+            width: 96px;
+        }
+        .auto-style4 {
+            height: 23px;
+            width: 203px;
+        }
+        .auto-style5 {
+            height: 23px;
+            width: 119px;
+        }
+        .auto-style6 {
+            height: 85px;
+        }
+    </style>
+ </head>
+<body>
+    <form id="form1" runat="server">
+
+        <div>
+            <table class="auto-style1">
+                <tr>
+                    <td class="auto-style3">
+                        <asp:Image ID="Image1" runat="server" Height="102px" ImageUrl="~/Assets/logo.png" Width="100px" />
+                    </td>
+                    <td class="auto-style4">PayTM Application</td>
+                    <td class="auto-style5">
+                        <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Assets/recharges.jpg" PostBackUrl="~/RechargeMobile.aspx" />
+                    </td>
+                    <td class="auto-style2" colspan="2">
+                        <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Assets/addMoney.jpg" PostBackUrl="~/AddMoney.aspx" />
+                    </td>
+                    <td class="auto-style2">
+                        <asp:ImageButton ID="ImageButton3" runat="server" />
+                    </td>
+                    <td class="auto-style2">
+                        <asp:ImageButton ID="ImageButton4" runat="server" />
+                    </td>
+                    <td class="auto-style2">
+                        <asp:ImageButton ID="ImageButton5" runat="server" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="background-color:teal" class="auto-style6">
+                        <asp:Menu ID="Menu1" runat="server" BackColor="#FFFBD6" DataSourceID="SiteMapDataSource1" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#990000" StaticSubMenuIndent="10px">
+                            <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
+                            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <DynamicMenuStyle BackColor="#FFFBD6" />
+                            <DynamicSelectedStyle BackColor="#FFCC66" />
+                            <StaticHoverStyle BackColor="#990000" ForeColor="White" />
+                            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <StaticSelectedStyle BackColor="#FFCC66" />
+                        </asp:Menu>
+                        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="False" />
+                        <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" Font-Bold="True" Font-Italic="True" ForeColor="#66FF33" ImageSet="Contacts" NodeIndent="10" ShowLines="True">
+                            <HoverNodeStyle Font-Underline="False" />
+                            <NodeStyle Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" />
+                            <ParentNodeStyle Font-Bold="True" ForeColor="#5555DD" />
+                            <SelectedNodeStyle Font-Underline="True" HorizontalPadding="0px" VerticalPadding="0px" />
+                        </asp:TreeView>
+                        <br />
+                        <br />
+                        <br />
+                    </td>
+                    <td colspan="4" style="background-color:bisque" class="auto-style6">
+                         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="8" style="background-color:aqua">Discalimer:<br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                    </td>
+                </tr>
+            </table>
+           
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿Master Pages
+-------------
+Master ---- Main
+1) Uniform Layout to your app
+2) CSS---Cascading Style Sheets(Client Side)
+Inline CSS------ 2000 places
+3) Master PAge----- replace in master
+
+
+
+Master Layout
+-----------------------------------
+contentPages----
+content-- aboutus====about us content
+	     ----home-----home page content
+-------------------------------
+Mastr Layout
+
+
+
+MainPage----Master Page
+-----------------------
+header-----logo, name  & menu
+
+contentPlaceHolder
+
+
+--------------------------
+footer----- copyright, disclaimer info
+**********************************************
+AboutUS:MainPage
+-----------------
+header-----logo, name  & menu
+content
+
+
+
+--------------------------
+footer----- copyright, disclaimer info
+-------------------------------------------------------
+Home:MainPage
+header-----logo, name  & menu
+content
+
+
+
+--------------------------
+footer----- copyright, disclaimer info
