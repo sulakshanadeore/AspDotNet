@@ -1,0 +1,41 @@
+﻿@using StateMgtMVC.Models;
+@{
+    ViewBag.Title = "ShowListCustomers";
+}
+
+<hr />
+
+<h1>@ViewBag.dt</h1>
+<h2>@ViewData["peekdatetime"]</h2>
+<hr />
+<h2>ShowListCustomers</h2>
+
+
+<ul>
+    @foreach (var item in ViewBag.customerList)
+    {
+        <li type="I">
+            @item.Custid
+        @item.Custname
+        @item.City
+    </li>
+
+}
+
+
+</ul>
+<hr />
+<ul>
+    @foreach (Cust item in (List<Cust>)ViewData["clist"])
+    {
+        <li type="I">
+            @item.Custid
+            @item.Custname
+            @item.City
+        </li>
+
+    }
+
+
+</ul>
+
