@@ -1,0 +1,62 @@
+ASP.NET (MVC) WEB API 
+
+
+Its a framework to build http  services that can reach to  a broad range of clients including browsers,mobile devices.
+With webapi u can build RESTful api on the .net framework
+
+
+REST------Architectural pattern
+Representational State Transfer
+MVC+REST
+-----------------------------------
+WebAPI development on the web, can be done in several ways:
+HTTP/RPC(Remote Procedural Call)---- call Methods across the web
+The verbs themselves are included in the API as method names/action names.
+HTTPPUT(Update)
+HTTPGET(Retrieve)
+HTTPPOST(Insert)
+HTTPDELETE(Delete)
+
+
+InsertCustomer---- PostCustomer-----
+ListCustomers------ GETCustomer
+RemoveCustomer-----Deletecustomer
+UpdateCustomerDetails------PUTCustomer
+
+public class CustomerController:ApiController 
+{
+POST(){}
+PUT(){}
+DELETE(){}
+GET(){}
+
+
+}
+------------------------------------------------------------------------------------------
+  http://localhost:1333/api/customer/POST----- URI(Uniform Resouce Identifier)----- www.yahoo.com/News
+
+		URL-----(Uniform resouce locator)-----www.yahoo.com
+-------------------------------------------------------------------------------------
+
+
+        DB----- DAL------BAL--------------Application             
+						Controller
+						Model	
+						Views
+						GET()---- createCustomer
+					
+						POST()---- createCustomer(customer c)
+
+					http:\\localhost:2343\customer\create
+						Model-----> Bal object----->Dal Method as a parameter
+			
+         DB <-------<DAL<----<----BAL<------- Model<--View<--Controller>			
+
+
+         DB <-------<DAL<----<----BAL<------- [Model<--Controller]------> Angular		
+DB <-------<DAL<----<----BAL<------- [Model<---Controller]<------Angular/React/Vuejs
+
+	
+Pass the data and receive the data ----- api testing tool ------POSTMAN/RESTClient/etc
+
+
