@@ -1,0 +1,131 @@
+Layout Page:
+
+Enter OrderID:
+---------------
+CustomerID:		OrderID:
+CustomerName:		OrderDate:
+CustomerCity:		EmployeeID:
+-------------------------------------
+ProductID   ProductName    Qty	Price Discount Amt
+------------------------------------------------------
+					Amount:
+
+-----------------------------------
+1) Bal---- Product,Orders,OrdersDetails,Customer, InoviceDetails:All Classes written for BAL
+
+Products:customers
+
+Orders:Products
+
+OrdersDetails:Orders
+
+Invoicedetails:OrderDetails
+
+
+        1.1  ------ Write a function-- 
+
+2) DAL----InvoiceGeneration
+	Create
+	Delete	
+	Edit
+	RetrieveDetails(int orderid)
+{
+Join query function
+}
+-------------------------------
+WebAPI
+InvoiceDetails   Get(int id)
+   {
+
+
+   }
+
+
+View()----- angular
+
+						Index(int orderid) {
+
+		
+
+}
+
+
+	
+
+***********************************************************************
+1) 
+USE [northwind]
+GO
+/****** Object:  UserDefinedFunction [dbo].[CalculateTotal]    Script Date: 31-May-21 11:04:45 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date, ,>
+-- Description:	<Description, ,>
+-- =============================================
+ALTER FUNCTION [dbo].[CalculateTotal]
+(
+	-- Add the parameters for the function here
+	@p_orderid int
+)
+RETURNS int
+AS
+BEGIN
+	-- Declare the return variable here
+	DECLARE @amt int
+
+	-- Add the T-SQL statements to compute the return value here
+	SELECT @amt=sum(o.unitprice*o.quantity)
+	from [order details] o
+where o.orderid=@p_orderid
+group by o.orderid
+
+	
+
+
+	-- Return the result of the function
+	RETURN @amt
+
+END
+
+
+*****==============********
+
+2) USE [northwind]
+GO
+/****** Object:  UserDefinedFunction [dbo].[fn_InvoiceGen]    Script Date: 31-May-21 11:02:07 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER FUNCTION [dbo].[fn_InvoiceGen]
+(	
+	-- Add the parameters for the function here
+	@p_orderid int
+)
+RETURNS TABLE 
+AS
+RETURN 
+(
+	-- Add the SELECT statement with parameter references here
+select c.customerid,c.companyname,c.city,o.orderid,o.orderdate,
+o.employeeid,od.productid,p.productname,od.unitprice,od.quantity,od.discount,
+od.unitprice*od.quantity as amt,[dbo].[CalculateTotal] (@p_orderid) as total
+from Customers c, Products p,Orders o,[Order Details] od
+where o.orderid=@p_orderid and p.ProductID=od.ProductID and
+ c.CustomerID=o.CustomerID and od.orderid=@p_orderid
+ group by c.customerid,c.companyname,c.city,o.orderid,o.orderdate,
+o.employeeid,od.productid,p.productname,od.unitprice,od.quantity,od.discount
+
+
+)
+
+
